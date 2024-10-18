@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Gamja+Flower&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family: "Delius Swash Caps", cursive;
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 600;
 }
 body{
     background: #E2F1E7;
