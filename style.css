@@ -77,6 +77,9 @@ body{
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+.day.space{
+    visibility: hidden;
+}
 .day:hover{
     background-color: #6295847b;
 }
