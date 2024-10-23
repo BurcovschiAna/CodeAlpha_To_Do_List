@@ -20,7 +20,7 @@ body{
     background-color: #387478;
 }
 .weekend{
-    color: red;
+    color: #F95454;
 }
 .task{
     font-size: 16px;
@@ -41,6 +41,9 @@ body{
 .done{
     text-decoration: line-through;
     opacity: 0.5;
+}
+.selected{
+    background-color: #F95454;
 }
 
 
@@ -77,7 +80,7 @@ body{
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
-.day.space{
+.day-space{
     visibility: hidden;
 }
 .day:hover{
@@ -86,33 +89,47 @@ body{
 .to-do-list{
     background-color: white;
     border-radius: 10px;
+    padding: 10px;
 }
 .list{
     width: 400px;
     min-height: 150px;
     padding: 10px;
 }
+#date{
+    text-align: center;
+}
+input[type="checkbox"]{
+    margin: 0 10px;
+}
+.text-input > div:first-child{
+  border: 1px solid #243642;  
+  border-radius: 10px;
+}
+/* .dots{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+} */
 .dot{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    margin: 0 3px;
+    margin: 3px;
 }
-.red-dot{
+#red-dot{
     background-color: #F95454;
 }
-.yellow-dot{
+#yellow-dot{
     background-color: #FFD23F;
 }
-.green-dot{
+#green-dot{
     background-color: #72BF78;
 }
 textarea{
-    display: flex;
-    border: 1px solid #243642;
-    border-radius: 10px;
-    margin: 10px auto;
-    padding: 10px;
+    border: 0;
+    margin: 5px;
+    padding: 5px;
     width: 80%;
     height: 50px;
     resize: none;
@@ -121,6 +138,10 @@ textarea{
 textarea::placeholder{
     color: #243642;
     font-size: 15px;
+}
+textarea:focus{
+    border: none;
+    outline: none;
 }
 .submit-btn{
     font-size: 18px;

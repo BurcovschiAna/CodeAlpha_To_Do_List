@@ -27,7 +27,7 @@
                 <div class="weekend">Su</div>
             </div>
             <div class="days">
-                <!-- <div class="day">1</div>
+                <div class="day">1</div>
                 <div class="day">2</div>
                 <div class="day">3</div>
                 <div class="day">4</div>
@@ -57,26 +57,36 @@
                 <div class="day">28</div>
                 <div class="day">29</div>
                 <div class="day">30</div>
-                <div class="day">31</div> -->
+                <div class="day">31</div> 
             </div>
         </div>
         <div class="to-do-list">
-            <div class="list">
-                <div class="task flexbox">
+            <div id="date"></div>
+            <div class="list" id="list">
+                <div class="task flexbox hidden" id="task">
                     <div>
                         <input type="checkbox">
                         Create a website                        
                     </div>
-                    <div class="dots flexbox">
-                        <div class="dot red-dot"></div>
-                        <div class="dot yellow-dot"></div>
-                        <div class="dot green-dot"></div>
-                    </div>
+                    <!-- <div class="dots flexbox" id="dots">
+                        <div class="dot" id="red-dot"></div>
+                        <div class="dot" id="yellow-dot"></div>
+                        <div class="dot" id="green-dot"></div>
+                    </div> -->
                 </div>
             </div>
             <div class="text-input">
-                <textarea placeholder="Write your daily tasks here..."></textarea>
-                <div class="submit-btn">Submit</div>
+                <div class="flexbox">
+                    <textarea id="message" placeholder="Write your daily tasks here..."></textarea>
+                    <div class="dots" id="dots">
+                        <div class="dot" id="red-dot"></div>
+                        <div class="dot" id="yellow-dot"></div>
+                        <div class="dot" id="green-dot"></div>
+                    </div> 
+                </div>
+                
+                
+                <div class="submit-btn" id="submit-btn">Submit</div>
             </div>
         </div>
     </div>
