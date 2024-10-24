@@ -9,8 +9,8 @@ const list = document.querySelector("#list");
 const submitBtn = document.querySelector("#submit-btn");
 const dateList = document.querySelector("#date");
 // const dots = document.querySelectorAll("#dots")
-// const redDot = document.querySelector("#red-dot");
-// const yellowDot = document.querySelector("#yellow-dot");
+// const dot1 = document.querySelector("#red-dot");
+// const dot2 = document.querySelector("#yellow-dot");
 // const greenDot = document.querySelector("#green-dot");
 let monthCout = 0;
 let year, month;
@@ -81,6 +81,8 @@ function selectDay(){
     target.classList.add("selected");
     dateList.innerHTML = date;
 }
+
+
 function createList(){
     if(message.value === ""){
         return; 
@@ -89,46 +91,53 @@ function createList(){
     let div = document.createElement("div");
     list.appendChild(div);
 
-    if (colorText(selectedColor) === "red") {
+    if (selectedColor === "red") {
         div.classList.add("red-task");
-    } else if(colorText(selectedColor) === "yellow"){
+    } else if(selectedColor === "yellow"){
         div.classList.add("yellow-task");
-    } else if (colorText(selectedColor) === "green"){
+    } else if (selectedColor === "green"){
         div.classList.add("green-task");
     }
     div.classList.add("flexbox");
     div.classList.remove("hidden")
-    div.innerHTML =  '<div><input type="checkbox">' + message.value + '</div>';
+    div.innerHTML =  '<div><input type="checkbox">' + message.value + '</div>' + '<img src="img/cancel-button-svgrepo-com.svg" class="delete">';
     message.value = "";
-     
+    const deleteBtn = div.querySelector(".delete")
+    deleteBtn.addEventListener("click", removeListItem);
 }
     
     
 submitBtn.addEventListener("click", createList);
-const dots = document.querySelectorAll("#dots");
-const redDot = document.querySelector("#red-dot");
-const yellowDot = document.querySelector("#yellow-dot");
-const greenDot = document.querySelector("#green-dot");
-let selectedColor = null;
-redDot.addEventListener("click", () => {
-    selectedColor = "red";
-    colorText("red");
-});
-yellowDot.addEventListener("click", () => {
-    selectedColor = "yellow";
-    colorText("yellow");
-});
-greenDot.addEventListener("click", () => {
-    selectedColor = "green";
-    colorText("green");
-});
+const dots = document.querySelectorAll(".dot");
+const dot1 = document.querySelector("#red-dot");
+const dot2 = document.querySelector("#yellow-dot");
+const dot3 = document.querySelector("#green-dot");
 
-function colorText(textClass){
-    if(textClass === "red"){
-        return "red";
-    } else if (textClass === "yellow"){
-        return "yellow";
-    } else if(textClass === "green"){
-        return "green";
+dot1.addEventListener("click", () => colorText("red", dot1));
+dot2.addEventListener("click", () => colorText("yellow", dot2));
+dot3.addEventListener("click", () => colorText("green", dot3));
+
+let selectedColor = null;
+
+function colorText(textClass, element) {
+    if (element.classList.contains("active-dot")) {
+        element.classList.remove("active-dot");
+        selectedColor = null;
+    } else {
+        dots.forEach(dot => dot.classList.remove("active-dot"));t
+        element.classList.add("active-dot");
+        selectedColor = textClass;
     }
+}
+
+// function resetTextarea(div){
+//     div.classList = "";
+//     message.value = "";
+// }
+
+
+
+function removeListItem(){
+ console.log("ceva");
+ 
 }
