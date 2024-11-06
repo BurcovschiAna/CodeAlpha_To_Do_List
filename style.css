@@ -1,163 +1,236 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Gamja+Flower&display=swap');
-*{
+
+/* Reset margin and padding for all elements, and set default font */
+* {
     margin: 0;
     padding: 0;
-    font-family: "Gamja Flower", sans-serif;
-    font-weight: 600;
-}
-body{
-    background: #E2F1E7;
-}
-.flexbox{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.active{
-    color: #E2F1E7;
-    background-color: #387478;
-}
-.weekend{
-    color: #F95454;
-}
-.task{
-    font-size: 16px;
-    border-bottom: 1px solid #243642;
-}
-.red-task{
-    color: #F95454;
-}
-.yellow-task{
-    color: #FFD23F;
-}
-.green-task{
-    color: #72BF78;
-}
-.hidden{
-    display: none;
-}
-.done{
-    text-decoration: line-through;
-    opacity: 0.5;
-}
-.selected{
-    border: 1px solid #243642;
+    font-family: "Gamja Flower", sans-serif; /* Set font family */
+    font-weight: 600; /* Set default font weight */
 }
 
+/* Set background color for the body */
+body {
+    background: #E2F1E7; /* Light green background */
+}
 
-.wrapper{
-    width: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Flexbox utility class for layout */
+.flexbox {
+    display: -webkit-box; /* Old Safari */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Modern browsers */
+    -webkit-box-direction: normal; /* Old Safari */
+    -webkit-box-orient: horizontal; /* Old Safari */
+    flex-direction: row; /* Arrange children in a row */
+    justify-content: space-between; /* Space children evenly */
+    align-items: center; /* Center children vertically */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
-.calendar{
-    width: 250px;
-    text-align: center;
-    color: #243642;
-    font-size: 20px;
+
+/* Active day styles */
+.active {
+    color: #E2F1E7; /* Text color for active day */
+    background-color: #387478; /* Background color for active day */
 }
-.controls{
-    padding: 10px 0 20px;
-    font-size: 23px;
+
+/* Weekend day styles */
+.weekend {
+    color: #F95454; /* Red color for weekend days */
 }
-.weekdays{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 10px 0;
+
+/* Task styles */
+.task {
+    font-size: 16px; /* Font size for tasks */
+    border-bottom: 1px solid #243642; /* Bottom border for task separation */
 }
-.days{
-    display: grid;
-    grid-template-columns: repeat(7 , 1fr);
-    grid-template-rows: repeat(4, 1fr);
+
+/* Color styles for different task types */
+.red-task {
+    color: #F95454; /* Red color for red tasks */
 }
-.day{
-    padding: 5px 0;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+.yellow-task {
+    color: #FFD23F; /* Yellow color for yellow tasks */
 }
-.day-space{
-    visibility: hidden;
+.green-task {
+    color: #72BF78; /* Green color for green tasks */
 }
-.day:hover{
-    background-color: #6295847b;
+
+/* Hidden element class */
+.hidden {
+    display: none; /* Hide elements with this class */
 }
-.to-do-list{
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
+
+/* Style for completed tasks */
+.done {
+    text-decoration: line-through; /* Strike-through for completed tasks */
+    opacity: 0.5; /* Reduced opacity for completed tasks */
 }
-.list{
-    width: 400px;
-    min-height: 150px;
-    padding: 10px;
+
+/* Selected day styles */
+.selected {
+    border: 1px solid #243642; /* Border for selected day */
 }
-#date{
-    text-align: center;
+
+/* Wrapper for centering the calendar */
+.wrapper {
+    width: 700px; /* Fixed width for the wrapper */
+    position: absolute; /* Absolute positioning for centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
 }
-input[type="checkbox"]{
-    margin: 0 10px;
+
+/* Calendar styling */
+.calendar {
+    width: 250px; /* Fixed width for the calendar */
+    text-align: center; /* Center text within the calendar */
+    color: #243642; /* Text color for the calendar */
+    font-size: 20px; /* Font size for the calendar */
+    -webkit-user-select: none; /* Old Safari */
+    -ms-user-select: none; /* IE 10 */
+    -moz-user-select: none;
+    user-select: none; /* Prevent text selection */
 }
-.text-input > div:first-child{
-  border: 1px solid #243642;  
-  border-radius: 10px;
+
+/* Control buttons styling */
+.controls {
+    padding: 10px 0 20px; /* Padding for control buttons */
+    font-size: 23px; /* Font size for control buttons */
 }
-/* .dots{
-    background-color: red;
-    width: 10px;
-    height: 10px;
-} */
-.dot{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 3px;
-    border: 2px solid transparent;
+
+/* Weekday headers grid */
+.weekdays {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(7, 1fr); /* 7 equal columns */
+    padding: 10px 0; /* Padding for weekdays */
 }
-#red-dot{
-    background-color: #F95454;
+
+/* Days grid layout */
+.days {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(7, 1fr); /* 7 equal columns */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows for days */
 }
-#yellow-dot{
-    background-color: #FFD23F;
+
+/* Day cell styling */
+.day {
+    padding: 5px 0; /* Vertical padding for day cells */
+    border-radius: 5px; /* Rounded corners for day cells */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    cursor: pointer; /* Pointer cursor on hover */
 }
-#green-dot{
-    background-color: #72BF78;
+
+/* Invisible space for days before the first day of the month */
+.day-space {
+    visibility: hidden; /* Hidden but takes up space */
 }
-.active-dot{
-    border: 2px solid #243642;
+
+/* Hover effect for day cells */
+.day:hover {
+    background-color: #6295847b; /* Light background on hover */
 }
-textarea{
-    border: 0;
-    margin: 5px;
-    padding: 5px;
-    width: 80%;
-    height: 50px;
-    resize: none;
-    color: #243642;
+
+/* To-do list container styling */
+.to-do-list {
+    background-color: white; /* White background for the to-do list */
+    border-radius: 10px; /* Rounded corners for the list */
+    padding: 10px; /* Padding inside the list */
 }
-textarea::placeholder{
-    color: #243642;
-    font-size: 15px;
+
+/* Task list styling */
+.list {
+    width: 400px; /* Fixed width for the task list */
+    min-height: 150px; /* Minimum height for the task list */
+    padding: 10px; /* Padding inside the task list */
 }
-textarea:focus{
-    border: none;
-    outline: none;
+
+/* Date display styling */
+#date {
+    text-align: center; /* Center text for the date display */
 }
-.submit-btn{
-    font-size: 18px;
-    color: #E2F1E7;
-    background: #387478;
-    border-radius: 10px;
-    padding: 5px 10px;
-    width: max-content;
-    margin: 5px auto 10px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+
+/* Checkbox input styling */
+input[type="checkbox"] {
+    margin: 0 10px; /* Margin around checkboxes */
 }
-.submit-btn:hover{
-    background-color: #629584;
+
+/* Styles for checked checkboxes */
+input[type="checkbox"]:checked ~ .message-list {
+    text-decoration: line-through; /* Strike-through for checked tasks */
+    opacity: 0.5; /* Reduced opacity for checked tasks */
+}
+
+input[type="checkbox"]:checked {
+    visibility: hidden; /* Hide checkbox when checked */
+}
+
+/* Text input container styling */
+.text-input > div:first-child {
+    border: 1px solid #243642; /* Border for the input container */
+    border-radius: 10px; /* Rounded corners for the input container */
+}
+
+/* Dot styles for color selection */
+.dot {
+    width: 10px; /* Fixed width for dots */
+    height: 10px; /* Fixed height for dots */
+    border-radius: 50%; /* Make dots circular */
+    margin: 3px; /* Margin around dots */
+}
+
+/* Specific colors for the dots */
+#red-dot {
+    background-color: #F95454; /* Red dot */
+}
+#yellow-dot {
+    background-color: #FFD23F; /* Yellow dot */
+}
+#green-dot {
+    background-color: #72BF78; /* Green dot */
+}
+
+/* Active dot styles */
+.active-dot {
+    border: 2px solid #243642; /* Border for active dot */
+}
+
+/* Textarea styling */
+textarea {
+    border: 0; /* No border */
+    margin: 5px; /* Margin around textarea */
+    padding: 5px; /* Padding inside textarea */
+    width: 80%; /* Width of textarea */
+    height: 50px; /* Height of textarea */
+    resize: none; /* Disable resizing */
+    color: #243642; /* Text color for textarea */
+}
+
+/* Placeholder styling for textarea */
+textarea::placeholder {
+    color: #243642; /* Placeholder text color */
+    font-size: 15px; /* Placeholder font size */
+}
+
+/* Focus styling for textarea */
+textarea:focus {
+    border: none; /* No border on focus */
+    outline: none; /* No outline on focus */
+}
+
+/* Submit button styling */
+.submit-btn {
+    font-size: 18px; /* Font size for submit button */
+    color: #E2F1E7; /* Text color for submit button */
+    background: #387478; /* Background color for submit button */
+    border-radius: 10px; /* Rounded corners for submit button */
+    padding: 5px 10px; /* Padding inside button */
+    width: max-content; /* Button width based on content */
+    margin: 5px auto 10px; /* Center margin */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for submit button */
+.submit-btn:hover {
+    background-color: #629584; /* Change background on hover */
 }
