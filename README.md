@@ -1,4 +1,3 @@
-# Code_Alpha_To_Do_List
 <h1>To-Do List Calendar</h1>
     <h2>Overview</h2>
     <p>This project is a simple To-Do List application integrated with a calendar. Users can navigate through months, select days, and create tasks associated with specific dates. The application also allows users to categorize tasks by color and save them in local storage for persistence.</p>
