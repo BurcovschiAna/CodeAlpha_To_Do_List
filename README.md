@@ -1,4 +1,3 @@
-# Code_Alpha_To_Do_List
 <h1>To-Do List Calendar</h1>
     <h2>Overview</h2>
     <p>This project is a simple To-Do List application integrated with a calendar. Users can navigate through months, select days, and create tasks associated with specific dates. The application also allows users to categorize tasks by color and save them in local storage for persistence.</p>
@@ -16,16 +15,6 @@
         <li><strong>JavaScript</strong>: Functionality and interactivity.</li>
         <li><strong>Local Storage</strong>: Persisting tasks across browser sessions.</li>
     </ul>
-    <h2>Installation</h2>
-    <ol>
-        <li>Clone the repository:
-            <pre><code>git clone https://github.com/yourusername/todo-list-calendar.git</code></pre>
-        </li>
-        <li>Navigate to the project directory:
-            <pre><code>cd todo-list-calendar</code></pre>
-        </li>
-        <li>Open <code>index.html</code> in your web browser.</li>
-    </ol>
     <h2>Usage</h2>
     <ul>
         <li><strong>Adding Tasks</strong>: Click on a day in the calendar, enter your task in the textarea, select a color, and click "Submit".</li>
