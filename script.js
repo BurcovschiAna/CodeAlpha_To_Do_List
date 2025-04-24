@@ -49,7 +49,7 @@ function calendar() {
     year = currentDate.getFullYear(); // Get the current year
     month = currentDate.getMonth(); // Get the current month
     let daysInMonth = (new Date(year, month + 1, 0).getDate()); // Get the number of days in the month
-    let weekDay = (new Date(year, month, 1).getDay()); // Get the weekday of the first day of the month
+    let weekDay = new Date(year, month, 1).getDay(); // Get the weekday of the first day of the month
     if (weekDay === 0) {
         weekDay = 7; // Adjust Sunday to be the last day of the week
     }
